@@ -284,7 +284,7 @@ app.get("/citas/doctor/:doctorId", (req, res) => {
   res.json({ success: true, data: agenda });
 });
 
-// ==================== ESTADÍSTICAS ====================
+// ==================== ESTADISTICAS ====================
 
 // Doctor con mas citas
 app.get("/estadisticas/doctores", (req, res) => {
