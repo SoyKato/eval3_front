@@ -1,0 +1,14 @@
+{
+  "name": "Sistema-de-citas-medicas",
+  "version": "1.0.0",
+  "description": "Sistema básico de citas médicas con JSON",
+  "main": "server.js",
+  "type": "module",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "express": "^4.19.2",
+    "uuid": "^9.0.1"
+  }
+}

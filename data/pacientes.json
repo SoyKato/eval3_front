@@ -1,0 +1,34 @@
+[
+  {
+    "id": "P001",
+    "nombre": "María González",
+    "edad": 35,
+    "telefono": "555-0101",
+    "email": "maria.g@email.com",
+    "fechaRegistro": "2025-01-15"
+  },
+  {
+    "id": "P002",
+    "nombre": "Test Paciente",
+    "edad": 30,
+    "telefono": "555-0004",
+    "email": "test4@example.com",
+    "fechaRegistro": "2025-11-14"
+  },
+  {
+    "id": "P003",
+    "nombre": "Test Paciente2",
+    "edad": 22,
+    "telefono": "555-0005",
+    "email": "test@example.com",
+    "fechaRegistro": "2025-11-14"
+  },
+  {
+    "id": "P004",
+    "nombre": "Test Paciente3",
+    "edad": 43,
+    "telefono": "646-0001",
+    "email": "test3@example.com",
+    "fechaRegistro": "2025-11-14"
+  }
+]

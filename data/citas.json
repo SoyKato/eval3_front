@@ -1,0 +1,21 @@
+[
+  {
+    "id": "C001",
+    "pacienteId": "P001",
+    "doctorId": "D001",
+    "fecha": "2025-11-10",
+    "hora": "10:00",
+    "motivo": "Revisión general",
+    "estado": "cancelada"
+  },
+  {
+    "id": "C002",
+    "pacienteId": "P001",
+    "doctorId": "D001",
+    "fecha": "2025-11-14",
+    "hora": "10:00",
+    "motivo": "Consulta Test",
+    "estado": "programada",
+    "fechaCreacion": "2025-11-15T00:43:15.992Z"
+  }
+]
