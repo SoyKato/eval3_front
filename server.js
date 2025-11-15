@@ -183,6 +183,19 @@ app.post("/doctores", (req, res) => {
 
 // ==================== CITAS ====================
 
+// Citas proximas
+app.get("/citas/proximas", (req, res) => {
+  const horas = Number(req.query.horas) || 24;
+  const citas = readData(CITAS_FILE);
+  const ahora = new Date();
+  const limite = new Date(ahora.getTime() + horas * 60 * 60 * 1000);
+  const proximas = citas.filter(c => {
+    const dt = new Date(`${c.fecha}T${c.hora}`);
+    return c.estado === "programada" && dt >= ahora && dt <= limite;
+  });
+  res.json({ success: true, data: proximas });
+});
+
 // Listar citas (fecha, estado)
 app.get("/citas", (req, res) => {
   const { fecha, estado } = req.query;
@@ -312,18 +325,7 @@ app.get("/estadisticas/especialidades", (req, res) => {
   res.json({ success: true, data: conteo });
 });
 
-// Citas proximas
-app.get("/citas/proximas", (req, res) => {
-  const horas = Number(req.query.horas) || 24;
-  const citas = readData(CITAS_FILE);
-  const ahora = new Date();
-  const limite = new Date(ahora.getTime() + horas * 60 * 60 * 1000);
-  const proximas = citas.filter(c => {
-    const dt = new Date(`${c.fecha}T${c.hora}`);
-    return c.estado === "programada" && dt >= ahora && dt <= limite;
-  });
-  res.json({ success: true, data: proximas });
-});
+
 
 // Manejo rutas no encontradas
 app.use((req, res) => {
