@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Doctores - Sistema de Gestión Clínica</title>
+  <link rel="stylesheet" href="../css/styles.css">
+</head>
+<body>
+  <div class="contenedor">
+    <!-- NAVEGACIÓN -->
+    <nav>
+      <div style="display: flex; justify-content: space-between; align-items: center; width: 100%;">
+        <div class="logo">
+          🏥 Clínica
+        </div>
+        <button class="btn-menu-movil" onclick="abrirMenuMovil()">☰</button>
+      </div>
+      <ul>
+        <li><a href="../index.html" class="nav-link">📊 Dashboard</a></li>
+        <li><a href="pacientes.html" class="nav-link">👥 Pacientes</a></li>
+        <li><a href="doctores.html" class="nav-link">👨‍⚕️ Doctores</a></li>
+        <li><a href="citas.html" class="nav-link">📅 Citas</a></li>
+      </ul>
+    </nav>
+
+    <!-- CONTENIDO PRINCIPAL -->
+    <main>
+      <div class="encabezado">
+        <h1>Gestión de Doctores</h1>
+        <button class="btn btn-nuevo" onclick="abrirFormularioDoctor()">+ Nuevo Doctor</button>
+      </div>
+
+      <!-- FILTRO ESPECIALIDAD -->
+      <div class="filtros">
+        <div class="filtro-grupo">
+          <label for="filtroEspecialidad">Filtrar por Especialidad</label>
+          <select id="filtroEspecialidad">
+            <option value="todas">Todas las especialidades</option>
+          </select>
+        </div>
+      </div>
+
+      <!-- LISTA DE DOCTORES -->
+      <div id="listaDoctores">
+        <div class="spinner"></div>
+      </div>
+    </main>
+  </div>
+
+  <!-- MODAL DOCTOR -->
+  <div id="modalDoctor" class="modal">
+    <div class="modal-contenido">
+      <div class="modal-header">
+        <h2 id="tituloDoctor">Nuevo Doctor</h2>
+        <button class="btn-cerrar" onclick="cerrarModalDoctor()">×</button>
+      </div>
+      <div class="modal-body">
+        <form id="formularioDoctor" class="formulario">
+          <div class="grupo-formulario">
+            <label for="nombreDoctor">Nombre Completo *</label>
+            <input type="text" id="nombreDoctor" required>
+          </div>
+
+          <div class="grupo-formulario">
+            <label for="especialidadDoctor">Especialidad *</label>
+            <input type="text" id="especialidadDoctor" placeholder="ej: Cardiología" required>
+          </div>
+
+          <div class="grupo-formulario">
+            <label for="horarioInicioDoctor">Horario Inicio (HH:MM) *</label>
+            <input type="time" id="horarioInicioDoctor" required>
+          </div>
+
+          <div class="grupo-formulario">
+            <label for="horarioFinDoctor">Horario Fin (HH:MM) *</label>
+            <input type="time" id="horarioFinDoctor" required>
+          </div>
+
+          <div class="grupo-formulario">
+            <label>Días Disponibles *</label>
+            <div class="dias-disponibles">
+              <div class="checkbox-wrapper">
+                <input type="checkbox" name="diasDisponibles" value="Lunes" id="dia-lunes">
+                <label for="dia-lunes">Lunes</label>
+              </div>
+              <div class="checkbox-wrapper">
+                <input type="checkbox" name="diasDisponibles" value="Martes" id="dia-martes">
+                <label for="dia-martes">Martes</label>
+              </div>
+              <div class="checkbox-wrapper">
+                <input type="checkbox" name="diasDisponibles" value="Miércoles" id="dia-miercoles">
+                <label for="dia-miercoles">Miércoles</label>
+              </div>
+              <div class="checkbox-wrapper">
+                <input type="checkbox" name="diasDisponibles" value="Jueves" id="dia-jueves">
+                <label for="dia-jueves">Jueves</label>
+              </div>
+              <div class="checkbox-wrapper">
+                <input type="checkbox" name="diasDisponibles" value="Viernes" id="dia-viernes">
+                <label for="dia-viernes">Viernes</label>
+              </div>
+              <div class="checkbox-wrapper">
+                <input type="checkbox" name="diasDisponibles" value="Sábado" id="dia-sabado">
+                <label for="dia-sabado">Sábado</label>
+              </div>
+            </div>
+          </div>
+
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" onclick="cerrarModalDoctor()">Cancelar</button>
+            <button type="submit" class="btn btn-guardar">Guardar</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <!-- SCRIPTS -->
+  <script src="../js/api.js"></script>
+  <script src="../js/utils.js"></script>
+  <script src="../js/doctores.js"></script>
+  <script>
+    // Inicializar doctores al cargar
+    document.addEventListener('DOMContentLoaded', inicializarDoctores);
+  </script>
+</body>
+</html>

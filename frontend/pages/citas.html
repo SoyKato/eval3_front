@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Citas - Sistema de Gestión Clínica</title>
+  <link rel="stylesheet" href="../css/styles.css">
+</head>
+<body>
+  <div class="contenedor">
+    <!-- NAVEGACIÓN -->
+    <nav>
+      <div style="display: flex; justify-content: space-between; align-items: center; width: 100%;">
+        <div class="logo">
+          🏥 Clínica
+        </div>
+        <button class="btn-menu-movil" onclick="abrirMenuMovil()">☰</button>
+      </div>
+      <ul>
+        <li><a href="../index.html" class="nav-link">📊 Dashboard</a></li>
+        <li><a href="pacientes.html" class="nav-link">👥 Pacientes</a></li>
+        <li><a href="doctores.html" class="nav-link">👨‍⚕️ Doctores</a></li>
+        <li><a href="citas.html" class="nav-link">📅 Citas</a></li>
+      </ul>
+    </nav>
+
+    <!-- CONTENIDO PRINCIPAL -->
+    <main>
+      <div class="encabezado">
+        <h1>Gestión de Citas</h1>
+        <button class="btn btn-nuevo" onclick="abrirFormularioCita()">+ Nueva Cita</button>
+      </div>
+
+      <!-- FILTROS -->
+      <div class="filtros">
+        <div class="filtro-grupo">
+          <label for="filtroFecha">Filtrar por Fecha</label>
+          <input type="date" id="filtroFecha">
+        </div>
+        <div class="filtro-grupo">
+          <label for="filtroEstado">Filtrar por Estado</label>
+          <select id="filtroEstado">
+            <option value="todas">Todas</option>
+            <option value="programada">Programada</option>
+            <option value="cancelada">Cancelada</option>
+          </select>
+        </div>
+      </div>
+
+      <!-- LISTA DE CITAS -->
+      <div id="listaCitas">
+        <div class="spinner"></div>
+      </div>
+    </main>
+  </div>
+
+  <!-- MODAL CITA -->
+  <div id="modalCita" class="modal">
+    <div class="modal-contenido">
+      <div class="modal-header">
+        <h2>Nueva Cita</h2>
+        <button class="btn-cerrar" onclick="cerrarModalCita()">×</button>
+      </div>
+      <div class="modal-body">
+        <form id="formularioCita" class="formulario">
+          <div class="grupo-formulario">
+            <label for="pacienteSelect">Seleccionar Paciente *</label>
+            <select id="pacienteSelect" required>
+              <option value="">Cargando pacientes...</option>
+            </select>
+          </div>
+
+          <div class="grupo-formulario">
+            <label for="especialidadSelect">Especialidad *</label>
+            <select id="especialidadSelect" required>
+              <option value="">Selecciona una especialidad...</option>
+            </select>
+          </div>
+
+          <div class="grupo-formulario">
+            <label for="doctorSelect">Doctor *</label>
+            <select id="doctorSelect" required>
+              <option value="">Selecciona un doctor...</option>
+            </select>
+          </div>
+
+          <div class="grupo-formulario">
+            <label for="fechaCita">Fecha de la Cita *</label>
+            <input type="date" id="fechaCita" required>
+          </div>
+
+          <div class="grupo-formulario">
+            <label for="horaCita">Hora (HH:MM) *</label>
+            <input type="time" id="horaCita" required>
+          </div>
+
+          <div class="grupo-formulario">
+            <label for="motivoCita">Motivo de Consulta *</label>
+            <textarea id="motivoCita" maxlength="200" required placeholder="Máximo 200 caracteres"></textarea>
+          </div>
+
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" onclick="cerrarModalCita()">Cancelar</button>
+            <button type="submit" class="btn btn-guardar">Guardar</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <!-- SCRIPTS -->
+  <script src="../js/api.js"></script>
+  <script src="../js/utils.js"></script>
+  <script src="../js/citas.js"></script>
+  <script>
+    // Inicializar citas al cargar
+    document.addEventListener('DOMContentLoaded', inicializarCitas);
+  </script>
+</body>
+</html>

@@ -8,27 +8,19 @@
     "fechaRegistro": "2025-01-15"
   },
   {
-    "id": "P002",
-    "nombre": "Test Paciente",
-    "edad": 30,
-    "telefono": "555-0004",
-    "email": "test4@example.com",
-    "fechaRegistro": "2025-11-14"
-  },
-  {
-    "id": "P003",
-    "nombre": "Test Paciente2",
+    "id": "P006",
+    "nombre": "Christian Yahir",
     "edad": 22,
-    "telefono": "555-0005",
-    "email": "test@example.com",
-    "fechaRegistro": "2025-11-14"
+    "telefono": "6462278145",
+    "email": "xd@zzz.com",
+    "fechaRegistro": "2025-12-03"
   },
   {
-    "id": "P004",
-    "nombre": "Test Paciente3",
-    "edad": 43,
-    "telefono": "646-0001",
-    "email": "test3@example.com",
-    "fechaRegistro": "2025-11-14"
+    "id": "P007",
+    "nombre": "Gustavo Marroquin",
+    "edad": 23,
+    "telefono": "1234567890",
+    "email": "zzz@hotmail.com",
+    "fechaRegistro": "2025-12-04"
   }
 ]

@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dashboard - Sistema de Gestión Clínica</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <div class="contenedor">
+    <!-- NAVEGACIÓN -->
+    <nav>
+      <div style="display: flex; justify-content: space-between; align-items: center; width: 100%;">
+        <div class="logo">
+          🏥 Clínica
+        </div>
+        <button class="btn-menu-movil" onclick="abrirMenuMovil()">☰</button>
+      </div>
+      <ul>
+        <li><a href="index.html" class="nav-link">📊 Dashboard</a></li>
+        <li><a href="pages/pacientes.html" class="nav-link">👥 Pacientes</a></li>
+        <li><a href="pages/doctores.html" class="nav-link">👨‍⚕️ Doctores</a></li>
+        <li><a href="pages/citas.html" class="nav-link">📅 Citas</a></li>
+      </ul>
+    </nav>
+
+    <!-- CONTENIDO PRINCIPAL -->
+    <main>
+      <div class="encabezado">
+        <h1>Dashboard</h1>
+      </div>
+
+      <!-- ESTADÍSTICAS -->
+      <div class="grid-estadisticas">
+        <div class="tarjeta">
+          <h3>Pacientes Registrados</h3>
+          <div class="numero" id="totalPacientes">0</div>
+        </div>
+        <div class="tarjeta success">
+          <h3>Doctores Activos</h3>
+          <div class="numero" id="totalDoctores">0</div>
+        </div>
+        <div class="tarjeta info">
+          <h3>Citas Hoy</h3>
+          <div class="numero" id="citasHoy">0</div>
+        </div>
+        <div class="tarjeta danger">
+          <h3>Citas Próximas (24h)</h3>
+          <div class="numero" id="citasProximas">0</div>
+        </div>
+      </div>
+
+      <!-- DOCTOR CON MÁS CITAS -->
+      <div style="margin-bottom: 24px;">
+        <div class="tarjeta">
+          <h3>Doctor con Más Citas</h3>
+          <div style="font-size: 18px; margin-top: 12px;" id="doctorTop">Cargando...</div>
+        </div>
+      </div>
+
+      <!-- CITAS DE HOY -->
+      <div style="margin-top: 32px;">
+        <h2 style="margin-bottom: 16px;">Citas de Hoy</h2>
+        <div id="citasDeHoy">
+          <div class="spinner"></div>
+        </div>
+      </div>
+    </main>
+  </div>
+
+  <!-- SCRIPTS -->
+  <script src="js/api.js"></script>
+  <script src="js/utils.js"></script>
+  <script src="js/app.js"></script>
+  <script>
+    // Inicializar dashboard al cargar
+    document.addEventListener('DOMContentLoaded', inicializarDashboard);
+  </script>
+</body>
+</html>

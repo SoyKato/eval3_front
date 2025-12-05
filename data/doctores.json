@@ -25,14 +25,30 @@
     ]
   },
   {
-    "id": "D003",
-    "nombre": "Dr. Prueba2",
-    "especialidad": "Urgencias",
-    "horarioInicio": "07:00",
-    "horarioFin": "12:00",
+    "id": "D004",
+    "nombre": "Dr Prueba Final",
+    "especialidad": "Cirujano",
+    "horarioInicio": "11:00",
+    "horarioFin": "22:00",
     "diasDisponibles": [
       "Lunes",
-      "Martes"
+      "Miércoles",
+      "Sábado"
+    ]
+  },
+  {
+    "id": "D005",
+    "nombre": "Dr Cos",
+    "especialidad": "Oftamologo",
+    "horarioInicio": "08:00",
+    "horarioFin": "22:00",
+    "diasDisponibles": [
+      "Lunes",
+      "Martes",
+      "Miércoles",
+      "Jueves",
+      "Viernes",
+      "Sábado"
     ]
   }
 ]

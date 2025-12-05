@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pacientes - Sistema de Gestión Clínica</title>
+  <link rel="stylesheet" href="../css/styles.css">
+</head>
+<body>
+  <div class="contenedor">
+    <!-- NAVEGACIÓN -->
+    <nav>
+      <div style="display: flex; justify-content: space-between; align-items: center; width: 100%;">
+        <div class="logo">
+          🏥 Clínica
+        </div>
+        <button class="btn-menu-movil" onclick="abrirMenuMovil()">☰</button>
+      </div>
+      <ul>
+        <li><a href="../index.html" class="nav-link">📊 Dashboard</a></li>
+        <li><a href="pacientes.html" class="nav-link">👥 Pacientes</a></li>
+        <li><a href="doctores.html" class="nav-link">👨‍⚕️ Doctores</a></li>
+        <li><a href="citas.html" class="nav-link">📅 Citas</a></li>
+      </ul>
+    </nav>
+
+    <!-- CONTENIDO PRINCIPAL -->
+    <main>
+      <div class="encabezado">
+        <h1>Gestión de Pacientes</h1>
+        <button class="btn btn-nuevo" onclick="abrirFormularioPaciente()">+ Nuevo Paciente</button>
+      </div>
+
+      <!-- BUSCADOR -->
+      <input type="text" id="buscadorPacientes" class="buscador" placeholder="Buscar por nombre o ID...">
+
+      <!-- LISTA DE PACIENTES -->
+      <div id="listaPacientes">
+        <div class="spinner"></div>
+      </div>
+    </main>
+  </div>
+
+  <!-- MODAL PACIENTE -->
+  <div id="modalPaciente" class="modal">
+    <div class="modal-contenido">
+      <div class="modal-header">
+        <h2 id="tituloPaciente">Nuevo Paciente</h2>
+        <button class="btn-cerrar" onclick="cerrarModalPaciente()">×</button>
+      </div>
+      <div class="modal-body">
+        <form id="formularioPaciente" class="formulario">
+          <div class="grupo-formulario">
+            <label for="nombrePaciente">Nombre Completo *</label>
+            <input type="text" id="nombrePaciente" required>
+          </div>
+
+          <div class="grupo-formulario">
+            <label for="edadPaciente">Edad *</label>
+            <input type="number" id="edadPaciente" min="1" required>
+          </div>
+
+          <div class="grupo-formulario">
+            <label for="telefonoPaciente">Teléfono *</label>
+            <input type="tel" id="telefonoPaciente" required>
+          </div>
+
+          <div class="grupo-formulario">
+            <label for="emailPaciente">Email *</label>
+            <input type="email" id="emailPaciente" required>
+          </div>
+
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" onclick="cerrarModalPaciente()">Cancelar</button>
+            <button type="submit" class="btn btn-guardar">Guardar</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <!-- SCRIPTS -->
+  <script src="../js/api.js"></script>
+  <script src="../js/utils.js"></script>
+  <script src="../js/pacientes.js"></script>
+  <script>
+    // Inicializar pacientes al cargar
+    document.addEventListener('DOMContentLoaded', inicializarPacientes);
+  </script>
+</body>
+</html>

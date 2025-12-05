@@ -1,14 +1,27 @@
 {
   "name": "Sistema-de-citas-medicas",
   "version": "1.0.0",
-  "description": "Sistema básico de citas médicas con JSON",
+  "description": "Sistema de gestión de citas médicas con Node.js/Express y frontend vanilla",
   "main": "server.js",
   "type": "module",
   "scripts": {
-    "start": "node server.js"
+    "start": "node server.js",
+    "dev": "node server.js"
   },
+  "keywords": [
+    "clinica",
+    "citas",
+    "pacientes",
+    "doctores",
+    "api-rest",
+    "express",
+    "vanilla-js"
+  ],
+  "author": "",
+  "license": "MIT",
   "dependencies": {
     "express": "^4.19.2",
-    "uuid": "^9.0.1"
+    "uuid": "^9.0.1",
+    "luxon": "^3.4.0"
   }
 }
