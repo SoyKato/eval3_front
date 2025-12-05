@@ -179,7 +179,19 @@ app.get("/pacientes/:id/historial", (req, res) => {
   if (!paciente) return res.status(404).json({ success: false, message: "Paciente no encontrado" });
 
   const citas = readData(CITAS_FILE);
-  const historial = citas.filter(c => c.pacienteId === req.params.id);
+  const doctores = readData(DOCTORES_FILE);
+
+  // Enriquecer con datos del doctor para que el frontend no muestre N/A
+  const historial = citas
+    .filter(c => c.pacienteId === req.params.id)
+    .map(c => {
+      const doctor = doctores.find(d => d.id === c.doctorId);
+      return {
+        ...c,
+        doctorNombre: doctor ? doctor.nombre : "N/A",
+        especialidad: doctor ? doctor.especialidad : "N/A"
+      };
+    });
   res.json({ success: true, data: historial });
 });
 

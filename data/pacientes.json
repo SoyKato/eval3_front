@@ -22,5 +22,13 @@
     "telefono": "1234567890",
     "email": "zzz@hotmail.com",
     "fechaRegistro": "2025-12-04"
+  },
+  {
+    "id": "P004",
+    "nombre": "Daiji Kato",
+    "edad": 23,
+    "telefono": "6462278145",
+    "email": "al20760640@ite.edu.mx",
+    "fechaRegistro": "2025-12-05"
   }
 ]
