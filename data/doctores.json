@@ -63,5 +63,17 @@
       "Viernes",
       "Sábado"
     ]
+  },
+  {
+    "id": "D006",
+    "nombre": "Dr Test 2",
+    "especialidad": "Urgenciologo",
+    "horarioInicio": "13:21",
+    "horarioFin": "15:21",
+    "diasDisponibles": [
+      "Lunes",
+      "Miércoles",
+      "Sábado"
+    ]
   }
 ]

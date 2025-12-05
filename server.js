@@ -181,7 +181,6 @@ app.get("/pacientes/:id/historial", (req, res) => {
   const citas = readData(CITAS_FILE);
   const doctores = readData(DOCTORES_FILE);
 
-  // Enriquecer con datos del doctor para que el frontend no muestre N/A
   const historial = citas
     .filter(c => c.pacienteId === req.params.id)
     .map(c => {
